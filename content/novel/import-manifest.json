@@ -1,0 +1,79 @@
+{
+  "chapters": [
+    {
+      "position": 1,
+      "file": "01-第一章.md",
+      "name": "第一章 世纪之末1",
+      "wordCount": 4747,
+      "sourceSha256": "71e57dda64503a10c8eeedb0bea262c16fa146eb941984245335f92199e53058",
+      "publicSha256": "5e447d81fc2d137d0975cb33748d61009f242c13f8ce4e7171a81949a173a11b"
+    },
+    {
+      "position": 2,
+      "file": "02-第二章.md",
+      "name": "第二章 世纪之末2",
+      "wordCount": 2699,
+      "sourceSha256": "50b7c198ebd1f7046a778aac920d951bccfb84a91afa0c31df020381e244334e",
+      "publicSha256": "3ddcc1b5935d08be6e6305509ba3f7f17de711b0e7cdf39d67f8c7eb0897bb08"
+    },
+    {
+      "position": 3,
+      "file": "03-第三章.md",
+      "name": "第三章 世纪之末3",
+      "wordCount": 3177,
+      "sourceSha256": "8c67af977a4aa2892870bdc9e468c3432641415e724986ebc452b5fcf9a0b520",
+      "publicSha256": "61cebed90bfcca304b978a84e161c85775f4943bc23dcf3f7a686e35ad091d84"
+    },
+    {
+      "position": 4,
+      "file": "04-第四章.md",
+      "name": "第四章 醒来",
+      "wordCount": 3674,
+      "sourceSha256": "9b453a55e2cd372afa87bf39324cb41cd749c8c927c0ff1178eb2819973a7a97",
+      "publicSha256": "545bece6471a372d431531ffa443a7309ab5bee33b9f7023f26509f2375d42b9"
+    },
+    {
+      "position": 5,
+      "file": "05-第五章.md",
+      "name": "第五章 今天先上学",
+      "wordCount": 4347,
+      "sourceSha256": "39e8998874b58f53d79145c2e5428d32580b008e328b7a07272dc202e5421ed6",
+      "publicSha256": "7f540d7cf0d890e680ced34298ac3248d88e86455a2cb2abfb443d71b26e3ccb"
+    },
+    {
+      "position": 6,
+      "file": "06-第六章.md",
+      "name": "第六章 三滴水",
+      "wordCount": 4415,
+      "sourceSha256": "567ed585126a5a2937348ebebf1f352710211b8d45773892e57028fd37fb33aa",
+      "publicSha256": "4effb280735ba52b86bba9a32d001e3b6f7fdd6036dc0e4706f6491a21a4976f"
+    },
+    {
+      "position": 7,
+      "file": "07-第七章.md",
+      "name": "第七章 十七个人",
+      "wordCount": 3935,
+      "sourceSha256": "df592266ae37acb39c40863ec184ae8b03030311bedf434c6ad7fa0b7f20ae84",
+      "publicSha256": "7089230cd02d333da726c65a2b6c5c2f989b64e8ee033910b429f54513e5094b"
+    },
+    {
+      "position": 8,
+      "file": "08-第八章.md",
+      "name": "第八章 西门",
+      "wordCount": 3725,
+      "sourceSha256": "1575bc0e30dcea255769cb79591430873f79e4327cb8e67426eb797ef6be11b0",
+      "publicSha256": "0e8c5954e0994bcc1ab7a87d0240e13a213e7b0a33b508544adfa8427ef35254"
+    },
+    {
+      "position": 9,
+      "file": "09-第九章.md",
+      "name": "第九章 先把图拿来",
+      "wordCount": 3127,
+      "sourceSha256": "66b54bc749f45f809f863bfb9ab065f5a824992a890f8621c2e8ab017b933861",
+      "publicSha256": "0df57ecfda537717e5846b63e006e4d33c751436727b616ce87f61a7a50af918"
+    }
+  ],
+  "missingTopLevelChapters": [
+    "第十章"
+  ]
+}

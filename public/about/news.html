@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><script src="/preview/preview-api.js"></script><script src="/preview/runtime.js"></script><link rel="stylesheet" href="/preview/preview.css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>新闻公共_大水书阁</title>
+    <link rel="stylesheet" href="/css/base.css?v=1"/>
+    <meta name="keywords" content="新闻公告,小说,小说网,言情小说,都市小说,玄幻小说,穿越小说,青春小说,总裁豪门小说,网络小说,免费小说,全本小说,原创网络文学"/><meta name="description"
+          content="大水书阁小说每日更新小说连载,小说排行榜,提供言情小说,都市小说,玄幻小说,穿越小说,青春小说,总裁豪门小说,网络小说,免费小说,全本小说,首发小说,最新章节免费小说阅读,精彩尽在大水书阁小说！"/>
+    <link rel="stylesheet" href="/css/about.css"/>
+    
+
+
+<!-- Dashui shared UI -->
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<script src="/dashui/preferences.js?v=1"></script>
+<script src="/dashui/boot.js?v=1"></script>
+<link rel="stylesheet" href="/dashui/site.css?v=1"/>
+<script src="/dashui/site.js?v=1" defer></script>
+<link rel="stylesheet" href="/dashui/characters.css?v=1"/>
+<script src="/dashui/character-client.js?v=1" defer></script>
+<script src="/dashui/characters.js?v=1" defer></script>
+</head>
+<body class="body"><div class="preview-banner"><strong>大水书阁 · 免费界面预览</strong><span>原创连载已加入 / 聊天为示例 / 无 API 费用</span><span class="preview-detail">书架、进度和留言仅保存在当前浏览器</span><label>演示身份 <select id="previewIdentity" aria-label="选择演示身份"><option value="7">读者</option><option value="8">另一位读者</option><option value="99">编辑</option><option value="guest">游客</option></select></label><a href="/book/7.html">读原创</a><a data-preview-reader href="/book/characters-1.html?chapterId=103&amp;personId=lin">样书角色体验</a><a data-preview-editor href="/author/characters.html?bookId=1">编辑预览</a></div>
+
+<header class="ds-header">
+ <div class="ds-shell ds-header-inner">
+  <a href="/" class="ds-brand" aria-label="大水书阁首页"><span class="ds-seal" aria-hidden="true">水</span><span>大水书阁</span></a>
+  <nav class="ds-nav" aria-label="主导航">
+   <a href="/">书城</a>
+   <a href="/book/bookclass.html">分类</a>
+   <a href="/book/book_ranking.html">排行榜</a>
+   <a href="/user/favorites.html">我的书架</a>
+  </nav>
+  <form class="ds-header-search" action="/book/bookclass.html" method="get" role="search">
+   <input type="search" name="k" id="searchKey" placeholder="书名 / 作者" aria-label="搜索书名或作者" maxlength="100"/>
+   <button type="submit" id="btnSearch">搜索</button>
+  </form>
+  <span data-ds-mode-slot></span>
+  <div class="ds-account" id="headerUserInfo"><span class="user_link"><a href="/user/login.html">登录</a><a href="/user/register.html">注册</a></span></div>
+ </div>
+</header>
+<!--主体 start-->
+<div class="main box_center cf">
+
+
+    <div class="my_r" style="width: 960px">
+        <div class="newsBox">
+            <ul class="news_list" id="newsList">
+
+
+            </ul>
+
+
+        </div>
+        <div class="pageBox cf" id="newsPage">
+
+        </div>
+    </div>
+
+
+</div>
+<!--主体 end-->
+
+<footer class="ds-footer">
+ <div><a href="/about/news.html">书阁公告</a><a href="/user/feedback.html">意见反馈</a><a href="/author/index.html">作家专区</a></div>
+ <p>大水书阁 · 读一段故事，留一盏灯。</p>
+ <div id="friendLink"></div>
+ <nav class="ds-mobile-nav" aria-label="手机导航"><a href="/">书城</a><a href="/book/bookclass.html">分类</a><a href="/user/favorites.html">书架</a><a href="/user/userinfo.html">我的</a></nav>
+</footer>
+v
+<script src="/javascript/jquery-1.8.0.min.js" type="text/javascript"></script><script src="/layui/layui.all.js" type="text/javascript"></script><script src="/preview/legacy.js" type="text/javascript"></script>
+<script src="/javascript/bookdetail.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+    search(1, 5);
+
+    function search(curr, limit) {
+
+        $.ajax({
+            type: "get",
+            url: "/news/listByPage",
+            data: {'curr': curr, 'limit': limit},
+            dataType: "json",
+            success: function (data) {
+                if (data.code == 200) {
+                    var newsList = data.data.list;
+                    if (newsList.length > 0) {
+                        var newsListHtml = "";
+                        for (var i = 0; i < newsList.length; i++) {
+                            var news = newsList[i];
+                            newsListHtml += (" <li>\n" +
+                                "                        <h5><i class=\"dot\"></i><a href=\"newsInfo-" + news.id + ".html\" >" + news.title + "</a></h5>\n" +
+                                "                        <p>" + news.createTime + "</p>\n" +
+                                "                    </li>");
+                        }
+                        $("#newsList").html(newsListHtml);
+
+                        layui.use('laypage', function () {
+                            var laypage = layui.laypage;
+
+                            //执行一个laypage实例
+                            laypage.render({
+                                elem: 'newsPage' //注意，这里的 test1 是 ID，不用加 # 号
+                                , count: data.data.total //数据总数，从服务端得到,
+                                , curr: data.data.pageNum
+                                , limit: data.data.pageSize
+                                , jump: function (obj, first) {
+
+
+                                    //obj包含了当前分页的所有参数，比如：
+                                    console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+                                    console.log(obj.limit); //得到每页显示的条数
+
+
+                                    //首次不执行
+                                    if (!first) {
+                                        search(obj.curr, obj.limit);
+                                    } else {
+
+                                    }
+                                }
+                            });
+                        });
+
+                    }
+
+
+                } else {
+                    layer.alert(data.msg);
+                }
+
+            },
+            error: function () {
+                layer.alert('网络异常');
+            }
+        })
+
+    }
+</script>
+</body>
+</html>
+
+
+

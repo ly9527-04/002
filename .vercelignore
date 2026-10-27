@@ -1,0 +1,13 @@
+.git
+.vercel
+*.log
+__pycache__
+node_modules
+content
+templates
+src
+docs
+tests
+*.py
+*.cjs
+README.md
